@@ -1,11 +1,13 @@
-FROM node:22-alpine
+FROM node:lts-alpine
 
-WORKDIR /app
+WORKDIR /usr/app
 
-COPY package*.json .
+COPY package*.json ./
 
-RUN npm install
+RUN npm install && npm cache clean --force
 
 COPY . .
 
-CMD npm start
+EXPOSE 3000
+
+CMD ["npm", "run", "start:watch"]

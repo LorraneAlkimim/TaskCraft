@@ -1,11 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "type": "module",
   "description": "Node.js Restful API with Node.js, Express and MongoDB",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon --legacy-watch src/server.js"
+    "start:dev": "node src/server.js",
+    "start:watch": "nodemon --inspect src/server.js"
   },
   "keywords": [
     "nodejs",
