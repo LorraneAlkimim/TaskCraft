@@ -1,8 +1,15 @@
-const express = require("express");
-const cors = require("cors");
-require("dotenv").config({ path: "../.env" });
+import express from "express";
+import cors from "cors";
+
+import("dotenv/config.js");
+import db from "../config/db.config.js";
+
+import authRoutes from "./routes/auth.js";
+import protectedRoute from "./routes/protectedRoute.js";
 
 const app = express();
+
+db.connect(app);
 
 app.use(
   cors({
@@ -12,13 +19,11 @@ app.use(
 
 app.use(express.json());
 
-app.get("/", (_, res) => {
-  return res.json({
-    message: "Hello world",
-  });
-});
+app.use("/auth", authRoutes);
+app.use("/protected", protectedRoute);
 
-const PORT = process.env.NODE_PORT;
+const PORT = process.env.NODE_PORT || 3000;
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
