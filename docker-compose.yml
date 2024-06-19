@@ -1,6 +1,16 @@
 version: '3.8'
 
 services:
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    ports:
+      - $REACT_PORT:$REACT_PORT
+    restart: always
+    env_file: ./.env
+    volumes:
+      - ./frontend:/usr/app/frontend
+
   backend:
     container_name: backend
     build: ./backend
@@ -15,7 +25,7 @@ services:
     depends_on:
       - db
     volumes:
-      - ./backend:/usr/app
+      - ./backend:/usr/app/backend
 
   db:
     container_name: mongodb
