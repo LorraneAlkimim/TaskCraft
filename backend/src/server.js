@@ -5,7 +5,8 @@ import("dotenv/config.js");
 import db from "../config/db.config.js";
 
 import authRoutes from "./routes/auth.js";
-import projects from "./routes/projects.js";
+import projectsRoutes from "./routes/projects.js";
+import tasksRoutes from "./routes/tasks.js";
 
 const app = express();
 
@@ -20,7 +21,8 @@ app.use(
 app.use(express.json());
 
 app.use("/auth", authRoutes);
-app.use("/projects", projects);
+app.use("/projects", projectsRoutes);
+app.use("/projects", tasksRoutes);
 
 const PORT = process.env.NODE_PORT || 3000;
 
