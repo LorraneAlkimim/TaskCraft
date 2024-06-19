@@ -5,7 +5,7 @@ import("dotenv/config.js");
 import db from "../config/db.config.js";
 
 import authRoutes from "./routes/auth.js";
-import protectedRoute from "./routes/protectedRoute.js";
+import projects from "./routes/projects.js";
 
 const app = express();
 
@@ -20,7 +20,7 @@ app.use(
 app.use(express.json());
 
 app.use("/auth", authRoutes);
-app.use("/protected", protectedRoute);
+app.use("/projects", projects);
 
 const PORT = process.env.NODE_PORT || 3000;
 
