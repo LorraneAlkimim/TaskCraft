@@ -73,7 +73,7 @@ export async function updateProject(req, res) {
 
 export async function deleteProject(req, res) {
   const id = req.params.projectId;
-  await Project.findOneAndDelete(id, { useFindAndModify: false })
+  await Project.findOneAndDelete({ _id: id }, { useFindAndModify: false })
     .then((data) => {
       if (!data) {
         res.status(404).send({
