@@ -4,6 +4,7 @@ import { ProtectedRoute } from "./ProtectedRoute";
 
 import { LoginPage } from "../pages/Login";
 import { RegisterPage } from "../pages/Register";
+import { ProjectsPage } from "../pages/Projects";
 
 const Routes = () => {
   const { token } = useAuth();
@@ -15,7 +16,7 @@ const Routes = () => {
       children: [
         {
           path: "/",
-          element: <div>User Home Page</div>,
+          element: <ProjectsPage />,
         },
       ],
     },
