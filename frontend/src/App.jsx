@@ -1,10 +1,12 @@
-function App() {
+import AuthProvider from "./provider/authProvider";
+import Routes from "./routes";
 
+function App() {
   return (
-    <>
-      <h1>Teste</h1>
-    </>
-  )
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;
