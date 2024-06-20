@@ -9,7 +9,6 @@ import { useAuth } from '../provider/authProvider';
 import { LoginService } from "../services/auth.service";
 
 
-
 const schema = z.object({
   email: z.string().email('E-mail inválido'),
   password: z.string()

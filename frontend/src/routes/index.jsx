@@ -3,6 +3,7 @@ import { useAuth } from "../provider/authProvider";
 import { ProtectedRoute } from "./ProtectedRoute";
 
 import { LoginPage } from "../pages/Login";
+import { RegisterPage } from "../pages/Register";
 
 const Routes = () => {
   const { token } = useAuth();
@@ -24,6 +25,10 @@ const Routes = () => {
     {
       path: "/auth/login",
       element: <LoginPage />,
+    },
+    {
+      path: "/auth/register",
+      element: <RegisterPage />,
     },
   ];
 
