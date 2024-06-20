@@ -39,9 +39,7 @@ export async function loginUser(req, res) {
       return res.status(401).json({ error: "Invalid credentials" });
     }
 
-    const token = jwt.sign({ email: user.email }, process.env.SECRET_KEY, {
-      expiresIn: "1h",
-    });
+    const token = jwt.sign({ email: user.email }, process.env.SECRET_KEY);
     res.status(200).json({ token });
   } catch (error) {
     res.status(500).json({ error: "Login failed" });
