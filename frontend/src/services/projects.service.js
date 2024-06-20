@@ -1,5 +1,9 @@
 import axios from "../lib/api";
 
+export const getProject = async (id) => {
+  return await axios.get(`/projects/${id}`);
+};
+
 export const getProjects = async () => {
   return await axios.get("/projects");
 };

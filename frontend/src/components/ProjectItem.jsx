@@ -15,7 +15,6 @@ export const ProjectItem = ({ item, getProjects, ...rest }) => {
   const handleDeleteProject = async (id) => {
     try {
       await deleteProject(id);
-      console.log("chegou delete id: ", id);
       getProjects();
       alert("Projeto deletado com sucesso!");
     } catch (error) {

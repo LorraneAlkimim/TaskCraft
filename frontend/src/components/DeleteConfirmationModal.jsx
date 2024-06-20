@@ -17,7 +17,7 @@ export const DeleteConfirmationModal = ({ isOpen, onConfirm, setIsOpen, itemName
         <Dialog.Content className='fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-gray-700 border shadow-2xl p-4 rounded-lg w-full max-w-md py-9 px-6'>
           <h3 className='text-center text-orange-400 text-2xl font-semibold mb-4'>Confirmação de Exclusão</h3>
 
-          <p className='mt-4'>Tem certeza de que deseja excluir o projeto <strong>{itemName}</strong>?</p>
+          <p className='mt-4'>Tem certeza de que deseja excluir <strong>{itemName}</strong>?</p>
 
           <div className='flex items-center justify-between mt-4 gap-4'>
             <Dialog.Close className='flex-1 px-4 py-3 border rounded-lg border-orange-400 hover:bg-orange-500 hover:text-white transition-colors'>

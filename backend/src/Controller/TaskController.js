@@ -90,7 +90,7 @@ export async function updateTask(req, res) {
 export async function deleteTask(req, res) {
   const id = req.params.taskId;
 
-  await Task.findOneAndDelete(id, { useFindAndModify: false })
+  await Task.findOneAndDelete({ _id: id }, { useFindAndModify: false })
     .then((data) => {
       if (!data) {
         res.status(404).send({
